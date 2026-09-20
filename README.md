@@ -34,7 +34,7 @@
 SSH 登录路由器执行：
 
 ```sh
-wget -O - https://github.com/XiaoHaiSly/OpenWrt-SubStore/raw/refs/heads/main/scripts/install.sh | ash
+wget -O - https://github.com/XiaoHaiSly/luci-app-substore/raw/refs/heads/main/scripts/install.sh | ash
 ```
 
 
@@ -100,7 +100,7 @@ apk add luci-app-substore
 需要 OpenWrt SDK 或完整源码树：
 
 ```sh
-git clone https://github.com/XiaoHaiSly/OpenWrt-SubStore.git package/luci-app-substore
+git clone https://github.com/XiaoHaiSly/luci-app-substore.git package/luci-app-substore
 cd <openwrt源码目录>
 make menuconfig   # LuCI -> Applications -> luci-app-substore 打勾
 make package/luci-app-substore/compile V=s
