@@ -17,6 +17,7 @@ endef
 
 define Package/luci-app-substore/conffiles
 /etc/config/substore
+/etc/sub-store
 endef
 
 define Package/luci-app-substore/postinst
