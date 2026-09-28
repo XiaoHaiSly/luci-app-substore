@@ -27,46 +27,6 @@
 
 ---
 
-## 安装方法
-
-### 方式一：一键脚本（推荐）
-
-SSH 登录路由器执行：
-
-```sh
-wget -O - https://github.com/XiaoHaiSly/luci-app-substore/raw/refs/heads/main/scripts/install.sh | ash
-```
-
-
-
-### 方式二：手动添加软件源
-
-**OpenWrt 24.10 及更早（opkg）：**
-
-```sh
-wget -O /tmp/substore-ipk.pub https://substore-openwrt.pages.dev/substore-ipk.pub
-opkg-key add /tmp/substore-ipk.pub
-echo "src/gz substore https://substore-openwrt.pages.dev/openwrt-24.10/all" > /etc/opkg/substore.conf
-opkg update
-opkg install luci-app-substore
-```
-
-**OpenWrt 25.12 及以后（apk）：**
-
-```sh
-wget -O /etc/apk/keys/substore-apk.pem https://substore-openwrt.pages.dev/substore-apk.pem
-mkdir -p /etc/apk/repositories.d
-echo "https://substore-openwrt.pages.dev/openwrt-25.12/all/packages.adb" > /etc/apk/repositories.d/substore.list
-apk update
-apk add luci-app-substore
-```
-
-### 方式三：LuCI 网页手动上传 ipk/apk
-
-在 Releases 下载 ipk/apk 文件，LuCI → 系统 → 软件包 → 上传安装。
-
----
-
 ## 配置项详解
 
 配置文件位于 `/etc/config/substore`，对应 UCI section `config`：
